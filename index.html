@@ -1,11 +1,275 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Hello World</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #050510;
+            font-family: Arial, sans-serif;
+
+            color: white;
+        }
+
+        /* Background glow */
+        .glow {
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            background: radial-gradient(
+                circle,
+                rgba(100, 80, 255, 0.25),
+                transparent 70%
+            );
+
+            filter: blur(40px);
+
+            pointer-events: none;
+
+            transform: translate(-50%, -50%);
+        }
+
+        /* Main content */
+        .container {
+            position: relative;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .small-text {
+            font-size: 14px;
+            letter-spacing: 6px;
+            color: #777;
+
+            margin-bottom: 25px;
+
+            text-transform: uppercase;
+        }
+
+        /* Hello World */
+        h1 {
+            font-size: clamp(60px, 12vw, 150px);
+
+            font-weight: 800;
+            letter-spacing: -6px;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #8c7cff,
+                #ff5fd7,
+                #ffffff
+            );
+
+            background-size: 300%;
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            animation:
+                gradient 5s linear infinite,
+                float 3s ease-in-out infinite;
+
+            filter:
+                drop-shadow(0 0 10px rgba(130, 100, 255, 0.5))
+                drop-shadow(0 0 30px rgba(255, 70, 220, 0.25));
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 300%;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        /* Typing cursor */
+        .cursor {
+            display: inline-block;
+
+            width: 4px;
+            height: 0.8em;
+
+            background: #ffffff;
+
+            margin-left: 8px;
+
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .subtitle {
+            margin-top: 30px;
+
+            color: #777;
+            font-size: 16px;
+
+            letter-spacing: 3px;
+        }
+
+        /* Particles */
+        .particle {
+            position: absolute;
+
+            width: 4px;
+            height: 4px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            box-shadow:
+                0 0 10px white,
+                0 0 20px #8175ff;
+
+            animation: particleMove linear infinite;
+        }
+
+        @keyframes particleMove {
+            from {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+        }
+
+        /* Bottom text */
+        .bottom {
+            position: absolute;
+
+            bottom: 30px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: #444;
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+        }
+    </style>
 </head>
+
 <body>
-    Hello World!
+
+    <!-- Mouse glow -->
+    <div class="glow" id="glow"></div>
+
+    <!-- Particles -->
+    <div class="particle" style="left:10%; animation-duration:8s;"></div>
+    <div class="particle" style="left:20%; animation-duration:11s;"></div>
+    <div class="particle" style="left:35%; animation-duration:7s;"></div>
+    <div class="particle" style="left:50%; animation-duration:10s;"></div>
+    <div class="particle" style="left:65%; animation-duration:8s;"></div>
+    <div class="particle" style="left:80%; animation-duration:12s;"></div>
+    <div class="particle" style="left:90%; animation-duration:9s;"></div>
+
+    <div class="container">
+
+        <h1>
+            <span id="hello"></span><span class="cursor"></span>
+        </h1>
+
+    </div>
+
+    <script>
+
+        /* Typing animation */
+
+        const text = "Hello World!";
+        const hello = document.getElementById("hello");
+
+        let index = 0;
+
+        function typeText() {
+
+            if (index < text.length) {
+
+                hello.textContent += text[index];
+
+                index++;
+
+                setTimeout(typeText, 120);
+
+            } else {
+
+                setTimeout(() => {
+
+                    hello.textContent = "";
+                    index = 0;
+
+                    typeText();
+
+                }, 4000);
+            }
+        }
+
+        typeText();
+
+
+        /* Mouse glow */
+
+        const glow = document.getElementById("glow");
+
+        document.addEventListener("mousemove", (event) => {
+
+            glow.style.left = event.clientX + "px";
+            glow.style.top = event.clientY + "px";
+
+        });
+
+    </script>
+
 </body>
 </html>
+```
