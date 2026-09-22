@@ -11,214 +11,542 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Hello World | My Web Journey</title>
+    <title>WebDev Journey</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
 
 </head>
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+    <!-- Background -->
 
-    <header class="navbar">
+    <div class="background-grid"></div>
 
-        <div class="logo">
-            <span>&lt;</span>Hello<span>/&gt;</span>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                &lt;/&gt;
+            </div>
+
+            <div>
+
+                <h2>WebDev</h2>
+
+                <span>Learning Hub</span>
+
+            </div>
+
         </div>
 
-        <nav>
 
-            <a href="#home">Home</a>
+        <nav class="sidebar-nav">
 
-            <a href="#technologies">Technologies</a>
+            <button
+                class="nav-item active"
+                data-page="dashboard"
+            >
 
-            <a href="#journey">Journey</a>
+                <span>⌂</span>
 
-            <a href="#demo">Demo</a>
+                Dashboard
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="lessons"
+            >
+
+                <span>▣</span>
+
+                Lessons
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="roadmap"
+            >
+
+                <span>◇</span>
+
+                Roadmap
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                data-page="progress"
+            >
+
+                <span>◈</span>
+
+                My Progress
+
+            </button>
 
         </nav>
 
-    </header>
+
+        <div class="sidebar-bottom">
+
+            <div class="course-label">
+                COURSE
+            </div>
+
+            <p>
+                Web & Mobile Application Development
+            </p>
+
+            <div class="status-dot">
+                <span></span>
+                Learning mode
+            </div>
+
+        </div>
+
+    </aside>
 
 
-    <!-- ================= HERO ================= -->
+    <!-- ================= MAIN ================= -->
 
-    <main>
+    <main class="main">
 
-        <section id="home" class="hero">
 
-            <div class="hero-content">
+        <!-- TOP BAR -->
 
-                <p class="terminal-text">
-                    > Initializing website...
-                </p>
+        <header class="topbar">
 
-                <h1>
-                    <span id="typing"></span>
-                    <span class="cursor">|</span>
+            <div>
+
+                <span class="top-label">
+                    WEB DEVELOPMENT
+                </span>
+
+                <h1 id="pageTitle">
+                    Learning Dashboard
                 </h1>
 
-                <p class="hero-description">
+            </div>
 
-                    My first step into the world of
-                    <strong>Web Development</strong>.
 
+            <div class="top-actions">
+
+                <div class="search">
+
+                    <span>⌕</span>
+
+                    <input
+                        id="searchInput"
+                        type="text"
+                        placeholder="Search lessons..."
+                    >
+
+                </div>
+
+                <div class="avatar">
+                    W
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section
+            id="dashboardPage"
+            class="page active-page"
+        >
+
+
+            <!-- HERO -->
+
+            <section class="hero-card">
+
+                <div class="hero-content">
+
+                    <div class="hero-badge">
+                        <span></span>
+                        COURSE IN PROGRESS
+                    </div>
+
+                    <h2>
+                        Master the Web.<br>
+                        Build the Future.
+                    </h2>
+
+                    <p>
+                        Explore HTML, CSS, JavaScript,
+                        backend development, databases,
+                        APIs and mobile applications.
+                    </p>
+
+                    <button
+                        class="primary-button"
+                        id="continueButton"
+                    >
+
+                        Continue Learning
+                        <span>→</span>
+
+                    </button>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="code-window">
+
+                        <div class="window-bar">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                        <div class="code">
+
+                            <p>
+                                <span class="pink">
+                                    const
+                                </span>
+
+                                developer = {
+                            </p>
+
+                            <p class="indent">
+
+                                name:
+                                <span class="green">
+                                    "Student"
+                                </span>,
+
+                            </p>
+
+                            <p class="indent">
+
+                                skills: [
+
+                            </p>
+
+                            <p class="indent2">
+
+                                <span class="green">
+                                    "HTML"
+                                </span>,
+
+                            </p>
+
+                            <p class="indent2">
+
+                                <span class="green">
+                                    "CSS"
+                                </span>,
+
+                            </p>
+
+                            <p class="indent2">
+
+                                <span class="green">
+                                    "JavaScript"
+                                </span>
+
+                            </p>
+
+                            <p class="indent">
+
+                                ]
+
+                            </p>
+
+                            <p>
+                                };
+                            </p>
+
+                            <p class="cursor-line">
+                                _
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- STATISTICS -->
+
+            <section class="stats">
+
+                <div class="stat-card">
+
+                    <span class="stat-icon purple">
+                        ◈
+                    </span>
+
+                    <div>
+
+                        <span class="stat-label">
+                            Lessons
+                        </span>
+
+                        <strong id="lessonCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-icon blue">
+                        ✓
+                    </span>
+
+                    <div>
+
+                        <span class="stat-label">
+                            Completed
+                        </span>
+
+                        <strong id="completedCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-icon green">
+                        %
+                    </span>
+
+                    <div>
+
+                        <span class="stat-label">
+                            Progress
+                        </span>
+
+                        <strong id="progressPercent">
+                            0%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-icon orange">
+                        ★
+                    </span>
+
+                    <div>
+
+                        <span class="stat-label">
+                            Topics
+                        </span>
+
+                        <strong id="topicCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- LEARNING CONTENT -->
+
+            <section class="content-section">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span>
+                            LEARNING LIBRARY
+                        </span>
+
+                        <h2>
+                            Explore Topics
+                        </h2>
+
+                    </div>
+
+                    <button
+                        id="viewAllButton"
+                        class="text-button"
+                    >
+                        View all →
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="categoryGrid"
+                    class="category-grid"
+                >
+
+                </div>
+
+            </section>
+
+
+
+            <!-- RECENT LESSONS -->
+
+            <section class="content-section">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span>
+                            YOUR LEARNING
+                        </span>
+
+                        <h2>
+                            Recent Lessons
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="recentLessons"
+                    class="lesson-list"
+                >
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+
+        <!-- ================= LESSONS ================= -->
+
+        <section
+            id="lessonsPage"
+            class="page"
+        >
+
+            <div class="page-heading">
+
+                <span>
+                    LEARNING LIBRARY
+                </span>
+
+                <h2>
+                    All Lessons
+                </h2>
+
+                <p>
+                    Explore everything you can learn
+                    in Web & Mobile Application Development.
                 </p>
 
-                <a href="#technologies" class="button">
+            </div>
 
-                    Explore My Journey
 
-                </a>
+            <div
+                id="filterButtons"
+                class="filters"
+            >
+
+            </div>
+
+
+            <div
+                id="allLessons"
+                class="lesson-grid"
+            >
 
             </div>
 
         </section>
 
 
-        <!-- ================= TECHNOLOGIES ================= -->
 
-        <section id="technologies" class="section">
+        <!-- ================= ROADMAP ================= -->
 
-            <div class="section-title">
+        <section
+            id="roadmapPage"
+            class="page"
+        >
 
-                <p>WHAT I AM LEARNING</p>
+            <div class="page-heading">
 
-                <h2>
-                    Building the Web
-                </h2>
-
-            </div>
-
-
-            <div class="cards">
-
-
-                <!-- HTML -->
-
-                <article class="card">
-
-                    <div class="card-icon">
-                        &lt;/&gt;
-                    </div>
-
-                    <h3>HTML</h3>
-
-                    <p>
-                        HyperText Markup Language
-                    </p>
-
-                    <div class="progress">
-
-                        <div
-                            class="progress-bar html-progress">
-                        </div>
-
-                    </div>
-
-                    <span class="percentage">
-                        Structure
-                    </span>
-
-                </article>
-
-
-                <!-- CSS -->
-
-                <article class="card">
-
-                    <div class="card-icon">
-                        #
-                    </div>
-
-                    <h3>CSS</h3>
-
-                    <p>
-                        Cascading Style Sheets
-                    </p>
-
-                    <div class="progress">
-
-                        <div
-                            class="progress-bar css-progress">
-                        </div>
-
-                    </div>
-
-                    <span class="percentage">
-                        Design
-                    </span>
-
-                </article>
-
-
-                <!-- JavaScript -->
-
-                <article class="card">
-
-                    <div class="card-icon">
-                        JS
-                    </div>
-
-                    <h3>JavaScript</h3>
-
-                    <p>
-                        Programming & Interaction
-                    </p>
-
-                    <div class="progress">
-
-                        <div
-                            class="progress-bar js-progress">
-                        </div>
-
-                    </div>
-
-                    <span class="percentage">
-                        Interaction
-                    </span>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= JOURNEY ================= -->
-
-        <section id="journey" class="section journey">
-
-            <div class="section-title">
-
-                <p>MY JOURNEY</p>
+                <span>
+                    LEARNING PATH
+                </span>
 
                 <h2>
-                    From Zero to Web
+                    Web Developer Roadmap
                 </h2>
+
+                <p>
+                    Follow a structured path from
+                    beginner to application developer.
+                </p>
 
             </div>
 
 
-            <div class="timeline">
+            <div class="roadmap">
 
+                <div class="roadmap-item completed">
 
-                <div class="timeline-item">
-
-                    <div class="number">
+                    <div class="roadmap-number">
                         01
                     </div>
 
                     <div>
 
                         <h3>
-                            Learn HTML
+                            HTML Fundamentals
                         </h3>
 
                         <p>
-                            Understand how websites are structured
-                            using elements, tags and semantic HTML.
+                            Learn structure, elements,
+                            semantic HTML and forms.
                         </p>
 
                     </div>
@@ -226,21 +554,21 @@
                 </div>
 
 
-                <div class="timeline-item">
+                <div class="roadmap-item">
 
-                    <div class="number">
+                    <div class="roadmap-number">
                         02
                     </div>
 
                     <div>
 
                         <h3>
-                            Learn CSS
+                            CSS & UI Design
                         </h3>
 
                         <p>
-                            Transform a basic HTML page into
-                            a beautiful and responsive interface.
+                            Layout, Flexbox, Grid,
+                            responsive design and animation.
                         </p>
 
                     </div>
@@ -248,21 +576,21 @@
                 </div>
 
 
-                <div class="timeline-item">
+                <div class="roadmap-item">
 
-                    <div class="number">
+                    <div class="roadmap-number">
                         03
                     </div>
 
                     <div>
 
                         <h3>
-                            Learn JavaScript
+                            JavaScript
                         </h3>
 
                         <p>
-                            Add logic, animation and interaction
-                            to the website.
+                            Variables, functions, DOM,
+                            events, APIs and asynchronous programming.
                         </p>
 
                     </div>
@@ -270,21 +598,43 @@
                 </div>
 
 
-                <div class="timeline-item">
+                <div class="roadmap-item">
 
-                    <div class="number">
+                    <div class="roadmap-number">
                         04
                     </div>
 
                     <div>
 
                         <h3>
-                            Deploy with GitHub
+                            Backend Development
                         </h3>
 
                         <p>
-                            Publish the website to the Internet
-                            using GitHub Pages.
+                            Servers, REST APIs,
+                            authentication and databases.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="roadmap-item">
+
+                    <div class="roadmap-number">
+                        05
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Mobile Application
+                        </h3>
+
+                        <p>
+                            Explore mobile UI,
+                            APIs and application architecture.
                         </p>
 
                     </div>
@@ -296,53 +646,63 @@
         </section>
 
 
-        <!-- ================= DEMO ================= -->
 
-        <section id="demo" class="section demo">
+        <!-- ================= PROGRESS ================= -->
 
-            <div class="section-title">
+        <section
+            id="progressPage"
+            class="page"
+        >
 
-                <p>JAVASCRIPT DEMO</p>
+            <div class="page-heading">
+
+                <span>
+                    YOUR JOURNEY
+                </span>
 
                 <h2>
-                    Make It Interactive
+                    Learning Progress
                 </h2>
 
             </div>
 
 
-            <div class="demo-box">
+            <div class="progress-dashboard">
 
-                <div class="terminal">
+                <div class="progress-circle">
 
-                    <div class="terminal-header">
+                    <div>
 
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                        <strong id="bigProgress">
+                            0%
+                        </strong>
+
+                        <span>
+                            Completed
+                        </span>
 
                     </div>
 
-                    <div class="terminal-body">
+                </div>
 
-                        <p>
-                            $ node hello.js
-                        </p>
 
-                        <p id="terminal-output">
+                <div class="progress-info">
 
-                            Hello World!
+                    <h3>
+                        Keep going!
+                    </h3>
 
-                        </p>
+                    <p>
+                        Every lesson you complete
+                        moves you closer to becoming
+                        a better developer.
+                    </p>
 
-                        <button
-                            id="helloButton"
-                            class="button"
-                        >
+                    <div class="large-progress">
 
-                            Run Program
-
-                        </button>
+                        <div
+                            id="largeProgressBar"
+                        ></div>
 
                     </div>
 
@@ -353,25 +713,40 @@
         </section>
 
 
+
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
 
-    <footer>
+    <!-- ================= LESSON MODAL ================= -->
 
-        <p>
-            Built with HTML • CSS • JavaScript
-        </p>
+    <div
+        id="lessonModal"
+        class="modal"
+    >
 
-        <p>
-            © 2026 My First Web Project
-        </p>
+        <div class="modal-content">
 
-    </footer>
+            <button
+                id="closeModal"
+                class="close-button"
+            >
+                ×
+            </button>
+
+            <div
+                id="modalContent"
+            >
+
+            </div>
+
+        </div>
+
+    </div>
 
 
-    <script src="js/script.js"></script>
+    <script src="js/lessons.js"></script>
+    <script src="js/app.js"></script>
 
 </body>
 
