@@ -1,274 +1,379 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Hello World</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <title>Hello World | My Web Journey</title>
 
-        body {
-            height: 100vh;
-            overflow: hidden;
+    <link rel="stylesheet" href="css/style.css">
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            background: #050510;
-            font-family: Arial, sans-serif;
-
-            color: white;
-        }
-
-        /* Background glow */
-        .glow {
-            position: absolute;
-
-            width: 500px;
-            height: 500px;
-
-            background: radial-gradient(
-                circle,
-                rgba(100, 80, 255, 0.25),
-                transparent 70%
-            );
-
-            filter: blur(40px);
-
-            pointer-events: none;
-
-            transform: translate(-50%, -50%);
-        }
-
-        /* Main content */
-        .container {
-            position: relative;
-            text-align: center;
-            z-index: 2;
-        }
-
-        .small-text {
-            font-size: 14px;
-            letter-spacing: 6px;
-            color: #777;
-
-            margin-bottom: 25px;
-
-            text-transform: uppercase;
-        }
-
-        /* Hello World */
-        h1 {
-            font-size: clamp(60px, 12vw, 150px);
-
-            font-weight: 800;
-            letter-spacing: -6px;
-
-            background: linear-gradient(
-                90deg,
-                #ffffff,
-                #8c7cff,
-                #ff5fd7,
-                #ffffff
-            );
-
-            background-size: 300%;
-
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-
-            animation:
-                gradient 5s linear infinite,
-                float 3s ease-in-out infinite;
-
-            filter:
-                drop-shadow(0 0 10px rgba(130, 100, 255, 0.5))
-                drop-shadow(0 0 30px rgba(255, 70, 220, 0.25));
-        }
-
-        @keyframes gradient {
-            0% {
-                background-position: 0%;
-            }
-
-            100% {
-                background-position: 300%;
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-12px);
-            }
-        }
-
-        /* Typing cursor */
-        .cursor {
-            display: inline-block;
-
-            width: 4px;
-            height: 0.8em;
-
-            background: #ffffff;
-
-            margin-left: 8px;
-
-            animation: blink 0.7s infinite;
-        }
-
-        @keyframes blink {
-            50% {
-                opacity: 0;
-            }
-        }
-
-        .subtitle {
-            margin-top: 30px;
-
-            color: #777;
-            font-size: 16px;
-
-            letter-spacing: 3px;
-        }
-
-        /* Particles */
-        .particle {
-            position: absolute;
-
-            width: 4px;
-            height: 4px;
-
-            border-radius: 50%;
-
-            background: white;
-
-            box-shadow:
-                0 0 10px white,
-                0 0 20px #8175ff;
-
-            animation: particleMove linear infinite;
-        }
-
-        @keyframes particleMove {
-            from {
-                transform: translateY(100vh);
-                opacity: 0;
-            }
-
-            20% {
-                opacity: 1;
-            }
-
-            80% {
-                opacity: 1;
-            }
-
-            to {
-                transform: translateY(-100px);
-                opacity: 0;
-            }
-        }
-
-        /* Bottom text */
-        .bottom {
-            position: absolute;
-
-            bottom: 30px;
-
-            left: 50%;
-
-            transform: translateX(-50%);
-
-            color: #444;
-
-            font-size: 12px;
-
-            letter-spacing: 3px;
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- Mouse glow -->
-    <div class="glow" id="glow"></div>
+    <!-- ================= NAVBAR ================= -->
 
-    <!-- Particles -->
-    <div class="particle" style="left:10%; animation-duration:8s;"></div>
-    <div class="particle" style="left:20%; animation-duration:11s;"></div>
-    <div class="particle" style="left:35%; animation-duration:7s;"></div>
-    <div class="particle" style="left:50%; animation-duration:10s;"></div>
-    <div class="particle" style="left:65%; animation-duration:8s;"></div>
-    <div class="particle" style="left:80%; animation-duration:12s;"></div>
-    <div class="particle" style="left:90%; animation-duration:9s;"></div>
+    <header class="navbar">
 
-    <div class="container">
+        <div class="logo">
+            <span>&lt;</span>Hello<span>/&gt;</span>
+        </div>
 
-        <h1>
-            <span id="hello"></span><span class="cursor"></span>
-        </h1>
+        <nav>
 
-    </div>
+            <a href="#home">Home</a>
 
-    <script>
+            <a href="#technologies">Technologies</a>
 
-        /* Typing animation */
+            <a href="#journey">Journey</a>
 
-        const text = "Hello World!";
-        const hello = document.getElementById("hello");
+            <a href="#demo">Demo</a>
 
-        let index = 0;
+        </nav>
 
-        function typeText() {
-
-            if (index < text.length) {
-
-                hello.textContent += text[index];
-
-                index++;
-
-                setTimeout(typeText, 120);
-
-            } else {
-
-                setTimeout(() => {
-
-                    hello.textContent = "";
-                    index = 0;
-
-                    typeText();
-
-                }, 4000);
-            }
-        }
-
-        typeText();
+    </header>
 
 
-        /* Mouse glow */
+    <!-- ================= HERO ================= -->
 
-        const glow = document.getElementById("glow");
+    <main>
 
-        document.addEventListener("mousemove", (event) => {
+        <section id="home" class="hero">
 
-            glow.style.left = event.clientX + "px";
-            glow.style.top = event.clientY + "px";
+            <div class="hero-content">
 
-        });
+                <p class="terminal-text">
+                    > Initializing website...
+                </p>
 
-    </script>
+                <h1>
+                    <span id="typing"></span>
+                    <span class="cursor">|</span>
+                </h1>
+
+                <p class="hero-description">
+
+                    My first step into the world of
+                    <strong>Web Development</strong>.
+
+                </p>
+
+                <a href="#technologies" class="button">
+
+                    Explore My Journey
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= TECHNOLOGIES ================= -->
+
+        <section id="technologies" class="section">
+
+            <div class="section-title">
+
+                <p>WHAT I AM LEARNING</p>
+
+                <h2>
+                    Building the Web
+                </h2>
+
+            </div>
+
+
+            <div class="cards">
+
+
+                <!-- HTML -->
+
+                <article class="card">
+
+                    <div class="card-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <h3>HTML</h3>
+
+                    <p>
+                        HyperText Markup Language
+                    </p>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar html-progress">
+                        </div>
+
+                    </div>
+
+                    <span class="percentage">
+                        Structure
+                    </span>
+
+                </article>
+
+
+                <!-- CSS -->
+
+                <article class="card">
+
+                    <div class="card-icon">
+                        #
+                    </div>
+
+                    <h3>CSS</h3>
+
+                    <p>
+                        Cascading Style Sheets
+                    </p>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar css-progress">
+                        </div>
+
+                    </div>
+
+                    <span class="percentage">
+                        Design
+                    </span>
+
+                </article>
+
+
+                <!-- JavaScript -->
+
+                <article class="card">
+
+                    <div class="card-icon">
+                        JS
+                    </div>
+
+                    <h3>JavaScript</h3>
+
+                    <p>
+                        Programming & Interaction
+                    </p>
+
+                    <div class="progress">
+
+                        <div
+                            class="progress-bar js-progress">
+                        </div>
+
+                    </div>
+
+                    <span class="percentage">
+                        Interaction
+                    </span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= JOURNEY ================= -->
+
+        <section id="journey" class="section journey">
+
+            <div class="section-title">
+
+                <p>MY JOURNEY</p>
+
+                <h2>
+                    From Zero to Web
+                </h2>
+
+            </div>
+
+
+            <div class="timeline">
+
+
+                <div class="timeline-item">
+
+                    <div class="number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Learn HTML
+                        </h3>
+
+                        <p>
+                            Understand how websites are structured
+                            using elements, tags and semantic HTML.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Learn CSS
+                        </h3>
+
+                        <p>
+                            Transform a basic HTML page into
+                            a beautiful and responsive interface.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Learn JavaScript
+                        </h3>
+
+                        <p>
+                            Add logic, animation and interaction
+                            to the website.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="number">
+                        04
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Deploy with GitHub
+                        </h3>
+
+                        <p>
+                            Publish the website to the Internet
+                            using GitHub Pages.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DEMO ================= -->
+
+        <section id="demo" class="section demo">
+
+            <div class="section-title">
+
+                <p>JAVASCRIPT DEMO</p>
+
+                <h2>
+                    Make It Interactive
+                </h2>
+
+            </div>
+
+
+            <div class="demo-box">
+
+                <div class="terminal">
+
+                    <div class="terminal-header">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                    <div class="terminal-body">
+
+                        <p>
+                            $ node hello.js
+                        </p>
+
+                        <p id="terminal-output">
+
+                            Hello World!
+
+                        </p>
+
+                        <button
+                            id="helloButton"
+                            class="button"
+                        >
+
+                            Run Program
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            Built with HTML • CSS • JavaScript
+        </p>
+
+        <p>
+            © 2026 My First Web Project
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
 
 </body>
+
 </html>
+```
